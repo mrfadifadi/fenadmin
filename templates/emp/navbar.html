@@ -1,0 +1,46 @@
+<nav class="navbar navbar-expand-lg" style="background-color: orange; position: relative;">
+  <div class="container-fluid d-flex justify-content-between align-items-center position-relative">
+
+    <!-- التاريخ على اليسار -->
+    <div class="text-white fw-bold">
+      <span id="currentDate"></span>
+    </div>
+
+    <!-- روابط التنقل في المنتصف -->
+    <div class="position-absolute start-50 translate-middle-x">
+      <ul class="navbar-nav d-flex flex-row gap-3">
+        <li class="nav-item">
+          <a class="nav-link text-white fw-bold" href="/emp/add-emp/">اضافة زبون</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-white fw-bold" href="/emp/home/">قائمة الزبائن</a>
+        </li>
+      </ul>
+    </div>
+
+    <!-- الشعار على اليمين -->
+    <a class="navbar-brand d-flex align-items-center" href="/emp/home/">
+      <span class="text-white fw-bold me-2">FenAdmin</span>
+      <img src="https://cdn.inflact.com/media/455425837_512515844759109_1423317560139731383_n.jpg?url=https%3A%2F%2Fscontent.cdninstagram.com%2Fv%2Ft51.2885-19%2F455425837_512515844759109_1423317560139731383_n.jpg%3Fstp%3Ddst-jpg_s320x320_tt6%26_nc_ht%3Dscontent-hkg1-1.cdninstagram.com%26_nc_cat%3D109%26_nc_oc%3DQ6cZ2QEv0F20NZfubQgpu1DCqeI7vMSBdQJ4H5m4mDC6rl73wrQn1Uv299j2GmFh8hIcy0Y%26_nc_ohc%3D5YoCR3Xv4igQ7kNvwEybrMQ%26_nc_gid%3DLkxQKfcDLcg2ztEvfiowLg%26edm%3DAOQ1c0wBAAAA%26ccb%3D7-5%26oh%3D00_AfKI3olywaNaCqF-89NreSyKSSZY6J0sEkiNszijs3U6qA%26oe%3D68259F0A%26_nc_sid%3D8b3546&time=1746914400&key=abcd374bd6aec37fec594c39367d11e5"
+           alt="Logo" width="40" height="40" class="rounded-circle">
+    </a>
+  </div>
+</nav>
+
+<!-- سكربت لعرض التاريخ -->
+<script>
+  window.addEventListener('DOMContentLoaded', function () {
+    const currentDate = new Date();
+    const formattedDate = currentDate.toLocaleDateString('ar-DZ', {
+      weekday: 'long',
+      year: 'numeric',
+      month: 'long',
+      day: 'numeric'
+    });
+
+    const dateElement = document.getElementById('currentDate');
+    if (dateElement) {
+      dateElement.textContent = formattedDate;
+    }
+  });
+</script>
